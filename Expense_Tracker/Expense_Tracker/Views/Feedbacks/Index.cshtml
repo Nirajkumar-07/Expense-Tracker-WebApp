@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Expense_Tracker.Models.Feedback>
+
+@{
+    ViewData["PageTitle"] = "User's Feedback";
+    ViewData["PageActionText"] = "Your Feedback";
+    ViewData["PageActionUrl"] = "/feedbacks/create";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <ejs-grid id="feedbacks" dataSource="@Model" gridLines="None" allowSorting="true">
+            <e-grid-pagesettings pageSize="3"></e-grid-pagesettings>
+            <e-grid-columns>
+                <e-grid-column headerText="User" field="Name"></e-grid-column>
+                <e-grid-column headerText="Feedbacks" field="Message"></e-grid-column>
+            </e-grid-columns>
+        </ejs-grid>
+    </div>
+</div>

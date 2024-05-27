@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center homebg">
+    <img src="~/back.jpg" />
+    <h1 class="display-2 homewc">&nbsp;</h1>
+    <p><span class="fw-bold homeex">ExCash Tracker</span></p>
+    <p>To Manage and Track Your Cash like Income Expense and Balance. Click on below link...</p>
+    <label><a href="/dashboard" class="text-decoration-none">Getting Start</a></label>
+</div>
+
+@section Scripts{
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+	<script>
+        var typed = new Typed('.homewc', {
+            strings: ["Welcome", "To...", "Welcome", "To...", "Welcome", "To...", "Welcome", "To...", "Welcome", "To..."],
+            typeSpeed: 150,
+            backSpeed: 150,
+            looped: true
+        });
+	</script>
+}

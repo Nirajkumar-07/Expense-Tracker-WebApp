@@ -1,0 +1,44 @@
+﻿@model Expense_Tracker.Models.Feedback
+
+@{
+    ViewData["PageTitle"] = "Feedback";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="widget p-5" style="background-color:#212b36">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <ejs-textbox id="name" placeholder="Name" ejs-for="Name" floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <ejs-textbox id="email" placeholder="Email" ejs-for="Email" floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="Email" class="text-danger fs-6"></span>
+            </div>
+            <div class="mb-3">
+                <ejs-textbox id="message" placeholder="Message" ejs-for="Message" floatLabelType="Always" multiline="true"></ejs-textbox>
+                <span asp-validation-for="Message" class="text-danger fs-6"></span>
+            </div>
+            <ejs-button id="submit" type="submit" content="Send Feedback" cssClass="e-success"></ejs-button>
+        </form>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="widget h-100 d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-comments fa-2xl"></i>
+        </div>
+    </div>
+</div>
+
+<style>
+    .multiline{
+        height:10rem;
+    }
+</style>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
